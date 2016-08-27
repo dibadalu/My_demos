@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div style="margin-top: 10px">
+        <input type="button" value="CallCamera" onclick="NativeApis.callCamera()">
+    </div>
+    <div style="margin-top: 50px">
+        <input type="button" value="Share" onclick="callShare()">
+    </div>
+    <div style="margin-top: 50px">
+        <input type="button" value="OpenReader" onclick="NativeApis.openNBPhoneReader()">
+    </div>
+</body>
+
+<script>
+    // 声明一个名为picCallback的函数，其参数为photo
+    var picCallback =  function (photo) {
+        alert(photo);
+    }
+
+    // 声明一个名为callShare的函数
+    var callShare = function () {
+        var shareInfo = JSON.stringify(
+                                      { "title": "objc&js的交互",
+                                        "desc": "就是那些事"}
+                                      );
+        // 调用原生的share方法
+        NativeApis.share(shareInfo);
+    }
+
+    // 声明一个名为shareCallback的函数
+    var shareCallback =  function () {
+        alert('success');
+    }
+
+</script>
+
+</html>

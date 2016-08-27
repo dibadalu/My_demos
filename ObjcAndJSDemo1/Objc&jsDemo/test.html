@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div style="margin-top: 10px">
+        <input type="button" value="callPhone" onclick="callPhone()">
+    </div>
+    
+    <div style="margin-top: 10px">
+        <input type="button" value="log" onclick="log('测试')">
+    </div>
+    
+</body>
+
+<script>
+    // 声明一个名为callPhone的js函数，其会发出一个链接为nativejs://callPhone的请求
+    function callPhone() {
+        window.location.href = 'nativejs://callPhone';
+    }
+
+</script>
+
+</html>
