@@ -16,6 +16,9 @@
 // 调用系统相机
 - (void)callCamera;
 
+// 调用系统相册
+- (void)CallPhotoLibrary;
+
 // 调用系统分享
 - (void)share:(NSString *)shareInfo;
 
@@ -27,5 +30,6 @@
 @interface NativeAPIs : NSObject <NativeApisProtocol>
 
 @property(weak, nonatomic) JSContext *jsContext;
+@property(weak, nonatomic) UIViewController *vc;
 
 @end

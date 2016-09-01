@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AwS-DW-50o">
+                                <rect key="frame" x="278" y="100" width="45" height="30"/>
+                                <state key="normal" title="record"/>
+                                <connections>
+                                    <action selector="recordClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OO5-be-v9z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geH-pK-wBl">
+                                <rect key="frame" x="278" y="180" width="42" height="30"/>
+                                <state key="normal" title="pause"/>
+                                <connections>
+                                    <action selector="pauseClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6dV-hK-Lny"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLU-ub-kBo">
+                                <rect key="frame" x="278" y="260" width="51" height="30"/>
+                                <state key="normal" title="resume"/>
+                                <connections>
+                                    <action selector="resumeClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DGA-76-iIg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhE-XX-zDI">
+                                <rect key="frame" x="278" y="340" width="31" height="30"/>
+                                <state key="normal" title="stop"/>
+                                <connections>
+                                    <action selector="stopClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R4z-5e-dmu"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="caI-nu-B81">
+                                <rect key="frame" x="150" y="450" width="300" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="xsz-GU-1jc"/>
+                                </constraints>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="geH-pK-wBl" firstAttribute="top" secondItem="AwS-DW-50o" secondAttribute="bottom" constant="50" id="EU4-k5-dzH"/>
+                            <constraint firstItem="caI-nu-B81" firstAttribute="top" secondItem="KhE-XX-zDI" secondAttribute="bottom" constant="80" id="Lck-v4-0e7"/>
+                            <constraint firstItem="AwS-DW-50o" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="PIf-9t-Gmb"/>
+                            <constraint firstItem="KhE-XX-zDI" firstAttribute="leading" secondItem="gLU-ub-kBo" secondAttribute="leading" id="V6j-MI-Q6T"/>
+                            <constraint firstItem="geH-pK-wBl" firstAttribute="leading" secondItem="AwS-DW-50o" secondAttribute="leading" id="WsK-6I-jr9"/>
+                            <constraint firstItem="gLU-ub-kBo" firstAttribute="leading" secondItem="geH-pK-wBl" secondAttribute="leading" id="gXh-Hn-pHM"/>
+                            <constraint firstItem="caI-nu-B81" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iHe-76-52q"/>
+                            <constraint firstItem="KhE-XX-zDI" firstAttribute="top" secondItem="gLU-ub-kBo" secondAttribute="bottom" constant="50" id="pBT-Gq-UaI"/>
+                            <constraint firstItem="gLU-ub-kBo" firstAttribute="top" secondItem="geH-pK-wBl" secondAttribute="bottom" constant="50" id="qEk-jb-CfO"/>
+                            <constraint firstItem="AwS-DW-50o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qmy-7o-Zvu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="audioPower" destination="caI-nu-B81" id="Vc7-Rm-PsS"/>
+                        <outlet property="pause" destination="geH-pK-wBl" id="5ac-GZ-ybv"/>
+                        <outlet property="record" destination="AwS-DW-50o" id="Q9c-bS-TRp"/>
+                        <outlet property="resume" destination="gLU-ub-kBo" id="ZdY-7z-ma9"/>
+                        <outlet property="stop" destination="KhE-XX-zDI" id="TIY-Uj-5Z6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

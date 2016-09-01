@@ -48,6 +48,7 @@
     // 将NativeAPIs模型注入JS
     self.jsContext[@"NativeApis"] = nativeAPIs;
     nativeAPIs.jsContext = self.jsContext;
+    nativeAPIs.vc = self;
     self.jsContext.exceptionHandler = ^(JSContext *context, JSValue *exceptionValue) {
         context.exception = exceptionValue;
         NSLog(@"异常信息: %@", exceptionValue);
